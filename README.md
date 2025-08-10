@@ -1,4 +1,4 @@
-# neqas_pipeline
+# Neqas_pipeline
 
 Influenza A EQA Sequencing Pipeline
 This is a bioinformatics pipeline for the analysis of Influenza A virus sequencing data, specifically designed for External Quality Assessment (EQA) purposes. The pipeline takes raw sequencing reads (Illumina or ONT) for H1N1 and H3N2 strains, performs quality control, alignment, variant calling, and generates a consensus sequence. Finally, it performs clade analysis and generates a comprehensive, strain-specific summary report.
@@ -19,7 +19,7 @@ Clade Analysis: The hemagglutinin (HA) segment is extracted from the consensus a
 Reporting: A separate, comprehensive summary report is generated for each strain (H1N1, H3N2) using MultiQC, aggregating the results from all previous steps.
 
 
-Dependencies
+#Dependencies
 The pipeline relies on Nextflow to run and Conda (specifically the mamba implementation for speed) to manage all software dependencies.
 
 The main bioinformatics tools used are:
