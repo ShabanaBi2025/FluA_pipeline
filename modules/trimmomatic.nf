@@ -9,7 +9,7 @@ process TRIMMOMATIC {
 
     output:
     tuple val(sample_id), val(platform), val(strain_id), path("${sample_id}_1_paired.fq.gz"), path("${sample_id}_1_unpaired.fq.gz"), path("${sample_id}_2_paired.fq.gz"), path("${sample_id}_2_unpaired.fq.gz"), emit: reads
-    path "*.log", emit: log
+    tuple val(strain_id), path("*.log"), emit: log
 
     script:
     def read1 = reads_list[0]

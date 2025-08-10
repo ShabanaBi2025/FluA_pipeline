@@ -8,9 +8,8 @@ process BCFTOOLS_MPILEUP {
     tuple val(sample_id), path(sorted_bam), path(reference_fasta), val(strain_id)
 
     output:
-    // The VCF output now includes the index file (.csi)
     tuple val(sample_id), path("${sample_id}.vcf.gz"), path("${sample_id}.vcf.gz.csi"), path(reference_fasta), val(strain_id), emit: vcf
-    path "${sample_id}.vcf.stats", emit: stats
+    tuple val(strain_id), path("${sample_id}.vcf.stats"), emit: stats
 
     script:
     """
@@ -26,7 +25,6 @@ process BCFTOOLS_CONSENSUS {
     publishDir "${params.outdir}/consensus/${strain_id}", mode: 'copy'
 
     input:
-    // The input now accepts the index file
     tuple val(sample_id), path(vcf_gz), path(vcf_index), path(reference_fasta), val(strain_id)
 
     output:

@@ -9,8 +9,8 @@ process ALIGN_ONT {
 
     output:
     tuple val(sample_id), val(platform), path("${sample_id}.sorted.bam"), val(strain_id), emit: bam
-    path "${sample_id}.minimap2.log", emit: log
-    path "${sample_id}.flagstat.txt", emit: flagstat
+    tuple val(strain_id), path("${sample_id}.minimap2.log"), emit: log
+    tuple val(strain_id), path("${sample_id}.flagstat.txt"), emit: flagstat
 
     script:
     """

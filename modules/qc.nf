@@ -8,7 +8,7 @@ process FASTQC {
     tuple val(sample_id), val(platform), path(reads), val(strain_id)
 
     output:
-    path("*.{zip,html}"), emit: reports
+    tuple val(strain_id), path("*.{zip,html}"), emit: reports
     
     script:
     def fastqc_inputs = (reads instanceof List) ? reads.join(' ') : reads

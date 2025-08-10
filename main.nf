@@ -1,4 +1,4 @@
-// main.nf - Consolidated Workflow
+// main.nf -  Workflow
 
 nextflow.enable.dsl = 2
 
@@ -94,19 +94,30 @@ workflow {
         }
 
     NEXTCLADE(nextclade_input_ch)
-// --- 5. Final Reporting ---
-// Mix all the output channels together into a single channel
-FASTQC.out.reports
-    .mix(TRIMMOMATIC.out.log)
-    .mix(ALIGN_ILLUMINA.out.log)
-    .mix(ALIGN_ILLUMINA.out.flagstat)
-    .mix(ALIGN_ONT.out.log)
-    .mix(ALIGN_ONT.out.flagstat)
-    .mix(BCFTOOLS_MPILEUP.out.stats)
-    .mix(NEXTCLADE.out.csv)
-    .flatten()
-    .collect()
-    .set { multiqc_input_ch }
 
-MULTIQC(multiqc_input_ch)
+    // --- 5. Final Reporting ---
+    // Handle FASTQC output which is a list of files, and flatten it
+    def fastqc_reports = FASTQC.out.reports.flatMap { strain_id, files ->
+        files.collect { file -> tuple(strain_id, file) }
+    }
+
+    // All other report channels are already in the correct (strain_id, file) format
+    def other_reports = TRIMMOMATIC.out.log
+        .mix(
+            ALIGN_ILLUMINA.out.log,
+            ALIGN_ILLUMINA.out.flagstat,
+            ALIGN_ONT.out.log,
+            ALIGN_ONT.out.flagstat,
+            BCFTOOLS_MPILEUP.out.stats,
+            NEXTCLADE.out.csv
+        )
+
+    // Combine the FASTQC reports with the others
+    def all_reports = fastqc_reports.mix(other_reports)
+
+    // Group all the report files by strain_id. The output will be a channel of [strain_id, [file_list]]
+    def multiqc_input_ch = all_reports.groupTuple()
+
+    // Run MULTIQC once for each strain
+    MULTIQC(multiqc_input_ch)
 }
