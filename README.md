@@ -19,7 +19,7 @@ Clade Analysis: The hemagglutinin (HA) segment is extracted from the consensus a
 Reporting: A separate, comprehensive summary report is generated for each strain (H1N1, H3N2) using MultiQC, aggregating the results from all previous steps.
 
 
-#Dependencies
+Dependencies
 The pipeline relies on Nextflow to run and Conda (specifically the mamba implementation for speed) to manage all software dependencies.
 
 The main bioinformatics tools used are:
