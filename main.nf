@@ -93,7 +93,11 @@ workflow {
             tuple(sample_id, ha_fasta, strain_id, dataset_path)
         }
 
-    NEXTCLADE(nextclade_input_ch)
+    nextclade_results = NEXTCLADE(nextclade_input_ch)
+
+def nextclade_csv = nextclade_results.csv
+def nextclade_extra = nextclade_results.extra_outputs
+
 
     // --- 5. Final Reporting ---
     // Handle FASTQC output which is a list of files, and flatten it
@@ -102,7 +106,7 @@ workflow {
     }
 
     // All other report channels are already in the correct (strain_id, file) format
-    def other_reports = TRIMMOMATIC.out.log
+        def other_reports = TRIMMOMATIC.out.log
         .mix(
             ALIGN_ILLUMINA.out.log,
             ALIGN_ILLUMINA.out.flagstat,
@@ -111,6 +115,7 @@ workflow {
             BCFTOOLS_MPILEUP.out.stats,
             NEXTCLADE.out.csv
         )
+
 
     // Combine the FASTQC reports with the others
     def all_reports = fastqc_reports.mix(other_reports)
