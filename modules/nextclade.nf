@@ -25,13 +25,17 @@ process NEXTCLADE {
     tuple val(sample_id), path(ha_fasta), val(strain_id), path(dataset_dir)
 
     output:
-    tuple val(strain_id), path("*.csv"), emit: csv
+    tuple val(strain_id), path("${sample_id}.nextclade.csv"), emit: csv
+    path("${sample_id}.*"), optional: true, emit: extra_outputs
 
-    script:
-    """
-    nextclade run \\
-        --input-dataset ${dataset_dir} \\
-        --output-csv="${sample_id}.nextclade.csv" \\
-        ${ha_fasta}
-    """
+   script:
+"""
+nextclade run \\
+    --input-dataset ${dataset_dir} \\
+    --output-csv ${sample_id}.nextclade.csv \\
+    --output-tsv ${sample_id}.nextclade.tsv \\
+    --output-tree ${sample_id}.nextclade.nwk \\
+    ${ha_fasta}
+"""
+
 }
