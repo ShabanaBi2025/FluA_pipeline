@@ -8,11 +8,13 @@ dependencies:
   - fastqc=0.11.9
   - multiqc=1.14
   - trimmomatic=0.39
-  - nanofilt>=2.8.0
+  - nanofilt=2.8.0
   - biopython>=1.78
   - samtools>=1.11
   - minimap2
   - bwa
   - bcftools
   - nextclade
+  - medaka
   - gzip          
+

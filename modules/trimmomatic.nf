@@ -20,6 +20,6 @@ process TRIMMOMATIC {
         ${sample_id}_1_paired.fq.gz ${sample_id}_1_unpaired.fq.gz \\
         ${sample_id}_2_paired.fq.gz ${sample_id}_2_unpaired.fq.gz \\
         ILLUMINACLIP:${params.adapters}:2:30:10 \\
-        LEADING:5 TRAILING:5 SLIDINGWINDOW:4:20 MINLEN:50
+        LEADING:3 TRAILING:3 SLIDINGWINDOW:5:15 MINLEN:30
     """
 }

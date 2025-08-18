@@ -8,11 +8,10 @@ process NANOFILT {
     tuple val(sample_id), val(platform), path(read), val(strain_id)
 
     output:
-    tuple val(sample_id), val(platform), path("${sample_id}_nanofilt.fastq.gz"), val(strain_id), emit: reads
+    tuple val(sample_id), val(platform), path("${sample_id}_filtered.fastq.gz"), val(strain_id), emit: reads
 
     script:
     """
-    zcat ${read} | NanoFilt > ${sample_id}_nanofilt.fastq
-    gzip ${sample_id}_nanofilt.fastq
+    zcat ${read} | NanoFilt -q 10 -l 500 | gzip > ${sample_id}_filtered.fastq.gz
     """
 }

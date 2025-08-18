@@ -13,7 +13,11 @@ process BCFTOOLS_MPILEUP {
 
     script:
     """
-    bcftools mpileup -Ou -f ${reference_fasta} ${sorted_bam} | bcftools call -mv --ploidy 1 -Oz -o ${sample_id}.vcf.gz
+    # Indel-aware mpileup with allele depth annotations
+    bcftools mpileup -Ou -f ${reference_fasta} -a AD,DP,SP ${sorted_bam} | \
+        bcftools call -mv --ploidy 1 -Oz -o ${sample_id}.vcf.gz
+
+    # Index and stats
     bcftools index ${sample_id}.vcf.gz
     bcftools stats ${sample_id}.vcf.gz > ${sample_id}.vcf.stats
     """
