@@ -28,14 +28,15 @@ process NEXTCLADE {
     tuple val(strain_id), path("${sample_id}.nextclade.csv"), emit: csv
     path("${sample_id}.*"), optional: true, emit: extra_outputs
 
-   script:
-"""
-nextclade run \\
-    --input-dataset ${dataset_dir} \\
-    --output-csv ${sample_id}.nextclade.csv \\
-    --output-tsv ${sample_id}.nextclade.tsv \\
-    --output-tree ${sample_id}.nextclade.nwk \\
+    script:
+    """
+    nextclade run \
+    --input-dataset ${dataset_dir} \
+    --output-csv ${sample_id}.nextclade.csv \
+    --output-tsv ${sample_id}.nextclade.tsv \
+    --output-tree ${sample_id}.nextclade.nwk \
+    --output-json ${sample_id}.nextclade.json \
     ${ha_fasta}
-"""
 
+    """
 }
