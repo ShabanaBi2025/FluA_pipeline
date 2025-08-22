@@ -1,3 +1,4 @@
+// main.nf
 nextflow.enable.dsl = 2
 
 // === INCLUDE ALL PROCESS MODULES ===
@@ -6,11 +7,9 @@ include { TRIMMOMATIC }        from './modules/trimmomatic.nf'
 include { NANOFILT }           from './modules/nanofilt.nf'
 include { ALIGN_ILLUMINA }     from './modules/align_illumina.nf'
 include { ALIGN_ONT }          from './modules/align_ont.nf'
-include { MEDAKA_CONSENSUS }   from './modules/medaka.nf'
 include { BCFTOOLS_MPILEUP }   from './modules/bcftools.nf'
 include { BCFTOOLS_CONSENSUS } from './modules/bcftools.nf'
-include { EXTRACT_HA_SEGMENT } from './modules/nextclade.nf'
-include { NEXTCLADE }          from './modules/nextclade.nf'
+include { EXTRACT_HA_SEGMENT; NEXTCLADE_STRAIN } from './modules/nextclade.nf'
 include { MULTIQC }            from './modules/multiqc.nf'
 
 // === FULL WORKFLOW ===
@@ -71,19 +70,7 @@ workflow {
     ALIGN_ILLUMINA(align_split_ch.illumina)
     ALIGN_ONT(align_split_ch.ont)
 
-    // --- 3. MEDAKA (ONT only) ---
-    def medaka_input_ch = ALIGN_ONT.out.bam
-        .map { sample_id, platform, bam, strain_id ->
-            def ref_fasta = file(params.references[strain_id])
-            tuple(sample_id, platform, bam, ref_fasta, strain_id)
-        }
-        .ifEmpty {
-            println "No ONT BAM files found. Skipping MEDAKA_CONSENSUS."
-        }
-
-    MEDAKA_CONSENSUS(medaka_input_ch)
-
-    // --- 4. Variant Calling ---
+    // --- 3. Variant Calling ---
     def aligned_bams_ch = ALIGN_ILLUMINA.out.bam.mix(ALIGN_ONT.out.bam)
 
     def bams_for_variant_calling = aligned_bams_ch
@@ -95,24 +82,37 @@ workflow {
     BCFTOOLS_MPILEUP(bams_for_variant_calling)
     BCFTOOLS_CONSENSUS(BCFTOOLS_MPILEUP.out.vcf)
 
-    // --- 5. Nextclade Analysis ---
-    EXTRACT_HA_SEGMENT(BCFTOOLS_CONSENSUS.out.fasta)
+    // --- 4. Filter, Extract HA, and Run Combined Nextclade ---
+    def consensus_files_ch = BCFTOOLS_CONSENSUS.out.fasta
 
-    def nextclade_input_ch = EXTRACT_HA_SEGMENT.out
-        .map { sample_id, ha_fasta, strain_id ->
-            def dataset_path = file(params.nextclade_datasets[strain_id])
-            tuple(sample_id, ha_fasta, strain_id, dataset_path)
+    def consensus_with_variants_ch = consensus_files_ch
+        .filter { sample_id, consensus_fasta, strain_id ->
+            def ref_fasta = file(params.references[strain_id])
+            def exitCode = "diff -q ${consensus_fasta} ${ref_fasta}".execute().waitFor()
+            return exitCode == 1
         }
 
-    def nextclade_results = NEXTCLADE(nextclade_input_ch)
+    EXTRACT_HA_SEGMENT(consensus_with_variants_ch)
 
-    def nextclade_csv = nextclade_results.csv
-    def nextclade_extra = nextclade_results.extra_outputs
+    def nextclade_input_ch = EXTRACT_HA_SEGMENT.out
+        .map { sample_id, ha_fasta, strain_id -> tuple(strain_id, ha_fasta) }
+        .groupTuple()
+        .map { strain_id, ha_fastas ->
+            def dataset_path = file(params.nextclade_datasets[strain_id])
+            tuple(strain_id, ha_fastas, dataset_path)
+        }
 
-    // --- 6. Final Reporting ---
+    NEXTCLADE_STRAIN(nextclade_input_ch)
+
+    // --- 5. Final Reporting ---
     def fastqc_reports = FASTQC.out.reports.flatMap { strain_id, files ->
         files.collect { file -> tuple(strain_id, file) }
     }
+
+    def nextclade_reports = NEXTCLADE_STRAIN.out.results
+        .flatMap { strain_id, results_dir ->
+            results_dir.listFiles().collect { file -> tuple(strain_id, file) }
+        }
 
     def other_reports = TRIMMOMATIC.out.log
         .mix(
@@ -121,11 +121,10 @@ workflow {
             ALIGN_ONT.out.log,
             ALIGN_ONT.out.flagstat,
             BCFTOOLS_MPILEUP.out.stats,
-            NEXTCLADE.out.csv
+            nextclade_reports
         )
 
     def all_reports = fastqc_reports.mix(other_reports)
-
     def multiqc_input_ch = all_reports.groupTuple()
 
     MULTIQC(multiqc_input_ch)
