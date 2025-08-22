@@ -1,7 +1,7 @@
 // modules/nextclade.nf
 process EXTRACT_HA_SEGMENT {
     tag "$sample_id"
-    
+
     input:
     tuple val(sample_id), path(multi_fasta), val(strain_id)
 
@@ -16,27 +16,29 @@ process EXTRACT_HA_SEGMENT {
     """
 }
 
-process NEXTCLADE {
-    tag "$sample_id"
-    label 'nextclade_process'
+process NEXTCLADE_STRAIN {
+    tag "$strain_id"
+    label 'nextclade'
     publishDir "${params.outdir}/nextclade/${strain_id}", mode: 'copy'
 
     input:
-    tuple val(sample_id), path(ha_fasta), val(strain_id), path(dataset_dir)
+    tuple val(strain_id), path(ha_fastas), path(dataset_dir)
 
     output:
-    tuple val(strain_id), path("${sample_id}.nextclade.csv"), emit: csv
-    path("${sample_id}.*"), optional: true, emit: extra_outputs
+    tuple val(strain_id), path("${strain_id}_nextclade_results"), emit: results
 
     script:
     """
-    nextclade run \
-    --input-dataset ${dataset_dir} \
-    --output-csv ${sample_id}.nextclade.csv \
-    --output-tsv ${sample_id}.nextclade.tsv \
-    --output-tree ${sample_id}.nextclade.nwk \
-    --output-json ${sample_id}.nextclade.json \
-    ${ha_fasta}
+    # Create a directory for the combined results
+    mkdir -p ${strain_id}_nextclade_results
 
+    # Concatenate all individual HA fasta files into one file
+    cat ${ha_fastas.join(' ')} > combined_samples.fasta
+
+    # Run Nextclade on the combined file
+    nextclade run \\
+      --input-dataset ${dataset_dir} \\
+      --output-all=${strain_id}_nextclade_results/ \\
+      combined_samples.fasta
     """
 }

@@ -32,14 +32,10 @@ process BCFTOOLS_CONSENSUS {
     tuple val(sample_id), path(vcf_gz), path(vcf_index), path(reference_fasta), val(strain_id)
 
     output:
-    tuple val(sample_id), path("${sample_id}.consensus.fasta"), val(strain_id), emit: fasta
+    tuple val(sample_id), path("${sample_id}.consensus.fasta"), val(strain_id), emit: 'fasta'
 
     script:
     """
-    if [ \$(bcftools view -H ${vcf_gz} | wc -l) -eq 0 ]; then
-        cp ${reference_fasta} ${sample_id}.consensus.fasta
-    else
-        bcftools consensus -f ${reference_fasta} ${vcf_gz} -o ${sample_id}.consensus.fasta
-    fi
+    bcftools consensus -f ${reference_fasta} ${vcf_gz} -o ${sample_id}.consensus.fasta
     """
 }
