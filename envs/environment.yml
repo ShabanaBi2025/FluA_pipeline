@@ -15,6 +15,5 @@ dependencies:
   - bwa
   - bcftools
   - nextclade
-  - medaka
   - gzip          
 
