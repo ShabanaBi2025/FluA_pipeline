@@ -11,6 +11,8 @@ include { BCFTOOLS_MPILEUP }   from './modules/bcftools.nf'
 include { BCFTOOLS_CONSENSUS } from './modules/bcftools.nf'
 include { EXTRACT_HA_SEGMENT; NEXTCLADE_STRAIN } from './modules/nextclade.nf'
 include { MULTIQC }            from './modules/multiqc.nf'
+include { RUN_SNP_EFF } from './modules/snpeff.nf'
+
 
 // === FULL WORKFLOW ===
 workflow {
@@ -82,7 +84,20 @@ workflow {
     BCFTOOLS_MPILEUP(bams_for_variant_calling)
     BCFTOOLS_CONSENSUS(BCFTOOLS_MPILEUP.out.vcf)
 
-    // --- 4. Filter, Extract HA, and Run Combined Nextclade ---
+
+    // --- 4. snpEff ---
+// Prepare input channel for snpEff: sample_id, vcf_file, strain_id
+    // --- 4. snpEff ---
+    def vcf_files_ch = BCFTOOLS_MPILEUP.out.vcf
+        .map { sample_id, vcf_file, vcf_index, ref_fasta, strain_id ->
+            def subtype = strain_id.toLowerCase()
+            def genome = subtype
+            tuple(sample_id, vcf_file, genome, subtype)
+        }
+
+    RUN_SNP_EFF(vcf_files_ch)
+
+    // --- 5. Filter, Extract HA, and Run Combined Nextclade ---
     def consensus_files_ch = BCFTOOLS_CONSENSUS.out.fasta
 
     def consensus_with_variants_ch = consensus_files_ch
@@ -104,7 +119,7 @@ workflow {
 
     NEXTCLADE_STRAIN(nextclade_input_ch)
 
-    // --- 5. Final Reporting ---
+    // --- 6. Final Reporting ---
     def fastqc_reports = FASTQC.out.reports.flatMap { strain_id, files ->
         files.collect { file -> tuple(strain_id, file) }
     }
