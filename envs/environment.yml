@@ -16,4 +16,9 @@ dependencies:
   - bcftools
   - nextclade
   - gzip          
+  - snpeff
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
 

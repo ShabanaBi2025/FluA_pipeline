@@ -1,7 +1,7 @@
 name: analysis_env
 channels:
-  - conda-forge
   - bioconda
+  - conda-forge
   - defaults
 dependencies:
   - r-base=4.3
@@ -18,10 +18,6 @@ dependencies:
   - r-pheatmap
   - r-ggthemes
   - r-ape
-  - snpeff
-  - python=3.11
-  - pandas
-  - numpy
-  - matplotlib
-  - seaborn
-      
+  - bioconductor-ggtree 
+   - python=3.11
+
