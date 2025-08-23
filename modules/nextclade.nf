@@ -12,9 +12,14 @@ process EXTRACT_HA_SEGMENT {
     def ha_id = params.ha_segment_ids[strain_id]
     """
     samtools faidx ${multi_fasta}
-    samtools faidx ${multi_fasta} ${ha_id} | sed '/>/! s/[RYSWKMBDHV]/N/g' > ${sample_id}.ha.fasta
+    samtools faidx ${multi_fasta} ${ha_id} \\
+      | sed '/>/ s/.*/>${sample_id}/' \\
+      | sed 's/-//g' \\
+      | sed '/>/! s/[RYSWKMBDHV]/N/g' > ${sample_id}.ha.fasta
     """
 }
+
+
 
 process NEXTCLADE_STRAIN {
     tag "$strain_id"
