@@ -1,0 +1,10 @@
+# The following table is formatted as tab separated values. 
+#GeneName	GeneId	TranscriptId	BioType	variants_impact_LOW	variants_impact_MODERATE	variants_impact_MODIFIER	variants_effect_disruptive_inframe_deletion	variants_effect_downstream_gene_variant	variants_effect_intron_variant	variants_effect_missense_variant	variants_effect_synonymous_variant
+NA	gene-UJ99_s6gp1	TRANSCRIPT_gene-UJ99_s6gp1	protein_coding	2	0	0	0	0	0	0	2
+NEP	gene-UJ99_s8gp1	TRANSCRIPT_gene-UJ99_s8gp1	protein_coding	3	3	16	0	0	16	3	3
+NP	gene-UJ99_s5gp1	TRANSCRIPT_gene-UJ99_s5gp1	protein_coding	24	6	0	0	0	0	6	24
+NS1	gene-UJ99_s8gp2	TRANSCRIPT_gene-UJ99_s8gp2	protein_coding	9	9	4	0	4	0	9	9
+PA	gene-UJ99_s3gp1	TRANSCRIPT_gene-UJ99_s3gp1	protein_coding	6	3	0	0	0	0	3	6
+PA-X	gene-UJ99_s3gp2	TRANSCRIPT_gene-UJ99_s3gp2	protein_coding	6	3	0	0	0	0	3	6
+PB1	gene-UJ99_s2gp1	TRANSCRIPT_gene-UJ99_s2gp1	protein_coding	12	2	0	1	0	0	1	12
+PB2	gene-UJ99_s1gp1	TRANSCRIPT_gene-UJ99_s1gp1	protein_coding	25	7	0	0	0	0	7	25

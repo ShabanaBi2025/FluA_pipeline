@@ -1,0 +1,49 @@
+##fileformat=VCFv4.2
+##FILTER=<ID=PASS,Description="All filters passed">
+##bcftoolsVersion=1.22+htslib-1.22.1
+##bcftoolsCommand=mpileup -Ou -f h1n1.fasta -a AD,DP,SP AYR844_barcode10_combined.sorted.bam
+##reference=file://h1n1.fasta
+##contig=<ID=NC_026438.1,length=2280>
+##contig=<ID=NC_026435.1,length=2274>
+##contig=<ID=NC_026437.1,length=2151>
+##contig=<ID=NC_026433.1,length=1701>
+##contig=<ID=NC_026436.1,length=1497>
+##contig=<ID=NC_026434.1,length=1410>
+##contig=<ID=NC_026431.1,length=982>
+##contig=<ID=NC_026432.1,length=863>
+##ALT=<ID=*,Description="Represents allele(s) other than observed.">
+##INFO=<ID=INDEL,Number=0,Type=Flag,Description="Indicates that the variant is an INDEL.">
+##INFO=<ID=IDV,Number=1,Type=Integer,Description="Maximum number of raw reads supporting an indel">
+##INFO=<ID=IMF,Number=1,Type=Float,Description="Maximum fraction of raw reads supporting an indel">
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Raw read depth">
+##INFO=<ID=VDB,Number=1,Type=Float,Description="Variant Distance Bias for filtering splice-site artefacts in RNA-seq data (bigger is better)",Version="3">
+##INFO=<ID=RPBZ,Number=1,Type=Float,Description="Mann-Whitney U-z test of Read Position Bias (closer to 0 is better)">
+##INFO=<ID=MQBZ,Number=1,Type=Float,Description="Mann-Whitney U-z test of Mapping Quality Bias (closer to 0 is better)">
+##INFO=<ID=BQBZ,Number=1,Type=Float,Description="Mann-Whitney U-z test of Base Quality Bias (closer to 0 is better)">
+##INFO=<ID=MQSBZ,Number=1,Type=Float,Description="Mann-Whitney U-z test of Mapping Quality vs Strand Bias (closer to 0 is better)">
+##INFO=<ID=SCBZ,Number=1,Type=Float,Description="Mann-Whitney U-z test of Soft-Clip Length Bias (closer to 0 is better)">
+##INFO=<ID=SGB,Number=1,Type=Float,Description="Segregation based metric, http://samtools.github.io/bcftools/rd-SegBias.pdf">
+##INFO=<ID=MQ0F,Number=1,Type=Float,Description="Fraction of MQ0 reads (smaller is better)">
+##FORMAT=<ID=PL,Number=G,Type=Integer,Description="List of Phred-scaled genotype likelihoods">
+##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Number of high-quality bases">
+##FORMAT=<ID=SP,Number=1,Type=Integer,Description="Phred-scaled strand bias P-value">
+##FORMAT=<ID=AD,Number=R,Type=Integer,Description="Allelic depths (high-quality bases)">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##INFO=<ID=AC,Number=A,Type=Integer,Description="Allele count in genotypes for each ALT allele, in the same order as listed">
+##INFO=<ID=AN,Number=1,Type=Integer,Description="Total number of alleles in called genotypes">
+##INFO=<ID=DP4,Number=4,Type=Integer,Description="Number of high-quality ref-forward , ref-reverse, alt-forward and alt-reverse bases">
+##INFO=<ID=MQ,Number=1,Type=Integer,Description="Average mapping quality">
+##bcftools_callVersion=1.22+htslib-1.22.1
+##bcftools_callCommand=call -mv --ploidy 1 -Oz -o AYR844_barcode10_combined.vcf.gz; Date=Sat Aug 23 10:43:24 2025
+##SnpEffVersion="5.2 (build 2023-09-29 06:17), by Pablo Cingolani"
+##SnpEffCmd="SnpEff  h1n1 AYR844_barcode10_combined.vcf.gz "
+##INFO=<ID=ANN,Number=.,Type=String,Description="Functional annotations: 'Allele | Annotation | Annotation_Impact | Gene_Name | Gene_ID | Feature_Type | Feature_ID | Transcript_BioType | Rank | HGVS.c | HGVS.p | cDNA.pos / cDNA.length | CDS.pos / CDS.length | AA.pos / AA.length | Distance | ERRORS / WARNINGS / INFO' ">
+##INFO=<ID=LOF,Number=.,Type=String,Description="Predicted loss of function effects for this variant. Format: 'Gene_Name | Gene_ID | Number_of_transcripts_in_gene | Percent_of_transcripts_affected'">
+##INFO=<ID=NMD,Number=.,Type=String,Description="Predicted nonsense mediated decay effects for this variant. Format: 'Gene_Name | Gene_ID | Number_of_transcripts_in_gene | Percent_of_transcripts_affected'">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	AYR844_barcode10_combined.sorted.bam
+NC_026438.1	1711	.	T	C	68.6845	.	DP=448;VDB=1.76117e-15;SGB=-0.693147;RPBZ=-1.23333;MQBZ=0;MQSBZ=0;BQBZ=0.961605;SCBZ=1.46252;MQ0F=0;AC=1;AN=1;DP4=119,25,244,60;MQ=60;ANN=C|synonymous_variant|LOW|PB2|gene-UJ99_s1gp1|transcript|TRANSCRIPT_gene-UJ99_s1gp1|protein_coding|1/1|c.1711T>C|p.Leu571Leu|1711/2280|1711/2280|571/759||	GT:PL:DP:SP:AD	1:255,159:448:2:144,304
+NC_026435.1	560	.	GAAAAA	GAAA	20.6525	.	INDEL;IDV=86;IMF=0.4;DP=215;VDB=2.19654e-31;SGB=-0.693147;RPBZ=2.61064;MQBZ=0.816497;MQSBZ=1.16775;BQBZ=-1.55421;SCBZ=-0.584095;MQ0F=0;AC=1;AN=1;DP4=68,61,19,53;MQ=59;ANN=GAAA|frameshift_variant|HIGH|PB1|gene-UJ99_s2gp1|transcript|TRANSCRIPT_gene-UJ99_s2gp1|protein_coding|1/1|c.564_565delAA|p.Arg189fs|564/2274|564/2274|188/757||;LOF=(PB1|gene-UJ99_s2gp1|1|1.00)	GT:PL:DP:SP:AD	1:80,31:201:35:129,30
+NC_026435.1	692	.	CAGAGAGAG	CAGAGAG	14.53	.	INDEL;IDV=50;IMF=0.224215;DP=223;VDB=3.90177e-13;SGB=-0.693139;RPBZ=-2.60263;MQBZ=0.537603;MQSBZ=1.17379;BQBZ=-3.21667;SCBZ=-0.712507;MQ0F=0;AC=1;AN=1;DP4=59,114,25,11;MQ=59;ANN=CAGAGAG|frameshift_variant|HIGH|PB1|gene-UJ99_s2gp1|transcript|TRANSCRIPT_gene-UJ99_s2gp1|protein_coding|1/1|c.699_700delAG|p.Gly234fs|699/2274|699/2274|233/757||;LOF=(PB1|gene-UJ99_s2gp1|1|1.00)	GT:PL:DP:SP:AD	1:54,11:209:39:173,25
+NC_026433.1	517	.	A	G	48.5892	.	DP=302;VDB=0;SGB=-0.693147;RPBZ=-0.428192;MQBZ=1.26627;MQSBZ=0.31334;BQBZ=2.54772;SCBZ=-0.648564;MQ0F=0;AC=1;AN=1;DP4=107,9,168,18;MQ=59;ANN=G|missense_variant|MODERATE|HA|gene-UJ99_s4gp1|transcript|TRANSCRIPT_gene-UJ99_s4gp1|protein_coding|1/1|c.517A>G|p.Asn173Asp|517/1701|517/1701|173/566||	GT:PL:DP:SP:AD	1:255,179:302:2:116,186
+NC_026436.1	302	.	A	G	228.277	.	DP=269;VDB=0;SGB=-0.693147;RPBZ=-0.448487;MQBZ=-0.348337;MQSBZ=0.216506;BQBZ=3.70164;SCBZ=0.676567;MQ0F=0;AC=1;AN=1;DP4=29,0,227,12;MQ=59;ANN=G|missense_variant|MODERATE|NP|gene-UJ99_s5gp1|transcript|TRANSCRIPT_gene-UJ99_s5gp1|protein_coding|1/1|c.302A>G|p.Asp101Gly|302/1497|302/1497|101/498||	GT:PL:DP:SP:AD	1:255,0:268:4:29,235
+NC_026436.1	365	.	T	A	228.428	.	DP=262;VDB=0;SGB=-0.693147;RPBZ=1.23551;MQBZ=-0.152792;MQSBZ=0.362098;BQBZ=2.26281;SCBZ=-0.489506;MQ0F=0;AC=1;AN=1;DP4=2,1,243,15;MQ=59;ANN=A|missense_variant|MODERATE|NP|gene-UJ99_s5gp1|transcript|TRANSCRIPT_gene-UJ99_s5gp1|protein_coding|1/1|c.365T>A|p.Leu122Gln|365/1497|365/1497|122/498||	GT:PL:DP:SP:AD	1:255,0:261:8:3,250

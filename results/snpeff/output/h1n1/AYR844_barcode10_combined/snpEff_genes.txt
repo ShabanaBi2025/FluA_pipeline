@@ -1,0 +1,6 @@
+# The following table is formatted as tab separated values. 
+#GeneName	GeneId	TranscriptId	BioType	variants_impact_HIGH	variants_impact_LOW	variants_impact_MODERATE	variants_effect_frameshift_variant	variants_effect_missense_variant	variants_effect_synonymous_variant
+HA	gene-UJ99_s4gp1	TRANSCRIPT_gene-UJ99_s4gp1	protein_coding	0	0	1	0	1	0
+NP	gene-UJ99_s5gp1	TRANSCRIPT_gene-UJ99_s5gp1	protein_coding	0	0	2	0	2	0
+PB1	gene-UJ99_s2gp1	TRANSCRIPT_gene-UJ99_s2gp1	protein_coding	2	0	0	2	0	0
+PB2	gene-UJ99_s1gp1	TRANSCRIPT_gene-UJ99_s1gp1	protein_coding	0	1	0	0	0	1

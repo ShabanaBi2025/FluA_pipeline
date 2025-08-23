@@ -1,0 +1,11 @@
+# The following table is formatted as tab separated values. 
+#GeneName	GeneId	TranscriptId	BioType	variants_impact_HIGH	variants_impact_LOW	variants_impact_MODERATE	variants_impact_MODIFIER	variants_effect_downstream_gene_variant	variants_effect_intron_variant	variants_effect_missense_variant	variants_effect_splice_region_variant	variants_effect_stop_gained	variants_effect_stop_lost	variants_effect_stop_retained_variant	variants_effect_synonymous_variant	variants_effect_upstream_gene_variant
+HA	gene-HA	TRANSCRIPT_gene-HA	protein_coding	0	5	1	0	0	0	1	0	0	0	0	5	0
+M1	gene-M1	TRANSCRIPT_gene-M1	protein_coding	0	78	23	34	33	0	23	0	0	0	0	78	1
+M2	gene-M2	TRANSCRIPT_gene-M2	protein_coding	0	22	16	97	0	96	16	1	0	0	0	22	1
+NEP	gene-NEP	TRANSCRIPT_gene-NEP	protein_coding	1	24	8	60	0	61	8	1	1	0	0	23	0
+NP	gene-NP	TRANSCRIPT_gene-NP	protein_coding	0	19	6	0	0	0	6	0	0	0	0	19	0
+NS1	gene-NS1	TRANSCRIPT_gene-NS1	protein_coding	1	33	39	20	20	0	39	0	1	0	0	33	0
+PB1	gene-PB1	TRANSCRIPT_gene-PB1	protein_coding	0	27	3	1	1	0	3	0	0	0	0	27	0
+PB1-F2	gene-PB1-F2	TRANSCRIPT_gene-PB1-F2	protein_coding	5	1	17	8	5	0	17	2	4	1	1	0	3
+PB2	gene-PB2	TRANSCRIPT_gene-PB2	protein_coding	0	137	30	5	4	0	30	1	0	0	1	136	1

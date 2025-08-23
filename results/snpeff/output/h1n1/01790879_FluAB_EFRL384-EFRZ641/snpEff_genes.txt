@@ -1,0 +1,12 @@
+# The following table is formatted as tab separated values. 
+#GeneName	GeneId	TranscriptId	BioType	variants_impact_HIGH	variants_impact_LOW	variants_impact_MODERATE	variants_impact_MODIFIER	variants_effect_downstream_gene_variant	variants_effect_frameshift_variant	variants_effect_intron_variant	variants_effect_missense_variant	variants_effect_splice_region_variant	variants_effect_stop_gained	variants_effect_stop_lost	variants_effect_stop_retained_variant	variants_effect_synonymous_variant
+HA	gene-UJ99_s4gp1	TRANSCRIPT_gene-UJ99_s4gp1	protein_coding	0	0	1	0	0	0	0	1	0	0	0	0	0
+M1	gene-UJ99_s7gp2	TRANSCRIPT_gene-UJ99_s7gp2	protein_coding	0	63	13	26	26	0	0	13	1	0	0	1	62
+M2	gene-UJ99_s7gp1	TRANSCRIPT_gene-UJ99_s7gp1	protein_coding	0	19	16	67	0	0	68	16	2	0	0	0	18
+NEP	gene-UJ99_s8gp1	TRANSCRIPT_gene-UJ99_s8gp1	protein_coding	1	15	8	8	0	0	9	8	1	1	0	0	14
+NP	gene-UJ99_s5gp1	TRANSCRIPT_gene-UJ99_s5gp1	protein_coding	1	94	25	0	0	1	0	25	0	0	0	0	94
+NS1	gene-UJ99_s8gp2	TRANSCRIPT_gene-UJ99_s8gp2	protein_coding	0	10	15	7	7	0	0	15	0	0	0	0	10
+PA	gene-UJ99_s3gp1	TRANSCRIPT_gene-UJ99_s3gp1	protein_coding	0	172	18	0	0	0	0	18	0	0	0	0	172
+PA-X	gene-UJ99_s3gp2	TRANSCRIPT_gene-UJ99_s3gp2	protein_coding	1	56	13	120	120	0	0	13	1	0	1	0	56
+PB1	gene-UJ99_s2gp1	TRANSCRIPT_gene-UJ99_s2gp1	protein_coding	0	159	21	0	0	0	0	21	0	0	0	0	159
+PB2	gene-UJ99_s1gp1	TRANSCRIPT_gene-UJ99_s1gp1	protein_coding	0	190	28	0	0	0	0	28	0	0	0	0	190
