@@ -1,0 +1,24 @@
+---
+title: "Influenza Variant Analysis Report: `r params$strain_name`"
+output: html_document
+params:
+  strain_name: "default_strain"
+  sample_id: NULL
+---
+
+```{r setup}
+library(dplyr)
+library(readr)
+library(ggplot2)
+library(knitr)
+library(here)
+
+strain <- params$strain_name
+sample_id <- params$sample_id
+
+variant_file <- here("results", "downstream", "variants_bwa", strain, paste0(strain, "_variants.csv"))
+variants <- read_csv(variant_file, show_col_types = FALSE)
+
+if (!is.null(sample_id)) {
+  variants <- variants %>% filter(Sample == sample_id)
+}

@@ -1,0 +1,38 @@
+name: analysis_env
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - r-base=4.3
+  - r-tidyr
+  - r-dplyr
+  - r-readr
+  - r-ggplot2
+  - r-stringr
+  - r-vcfr
+  - r-here
+  - r-rmarkdown
+  - r-janitor
+  - r-markdown
+  - r-knitr
+  - r-reshape2
+  - r-data.table
+  - r-pheatmap
+  - r-ggthemes
+  - r-ape
+  - r-vroom
+  - r-curl
+  - r-glue
+  - r-scales
+  - r-xml
+  - r-fs
+  - snpeff
+  - python=3.11
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
+  - pandoc
+  - bioconductor-ggtree
+  - bioconductor-treeio

@@ -1,0 +1,40 @@
+ou are currently keeping them separate through:
+
+Initial Channel Creation: Your main.nf explicitly creates separate branches (qc_branched_output.illumina, qc_branched_output.ont).
+
+Trimming/Filtering: TRIMMOMATIC for Illumina, NANOFILT for ONT. These are distinct tools for distinct technologies.
+
+Alignment: ALIGN_ILLUMINA (BWA-MEM) for Illumina, ALIGN_ONT (Minimap2) for ONT. This is crucial as their alignment algorithms are optimized for their respective error profiles.
+
+Output Directories: Your publishDir strategy (results/aligned/illumina/h1n1 vs. results/aligned/ont/h1n1) keeps the outputs clearly segregated.
+
+Advantages of keeping separate until Alignment:
+
+Optimized Processing: Each technology gets the best-suited tools and parameters.
+
+Clarity: Easy to trace data lineage and troubleshoot technology-specific issues.
+
+Intermediate Output Inspection: You can easily check FastQC, trimmed reads, and aligned BAMs for each technology independently.
+
+When to Merge (Post-Alignment or Post-Variant Calling)
+The point of convergence usually depends on what the common data type your downstream tools expect.
+
+Merge after Alignment (Before Variant Calling - Less Common for Mixed Tech):
+
+Pros: If your variant caller or downstream analysis can handle BAM files from both technologies equally well (e.g., a variant caller specifically designed for mixed data, or if you apply extensive quality recalibration to both to normalize error profiles).
+
+Cons: Illumina BAMs and ONT BAMs still have very different error characteristics (e.g., indels for ONT, substitutions for Illumina), even after alignment. Most variant callers are optimized for one type. Merging them too early can lead to suboptimal variant calling if the caller doesn't account for these differences. You'd need to ensure samtools tools would work well on merged BAMs of different technologies.
+
+Merge after Variant Calling (Most Common for Mixed Tech):
+
+Pros: This is the recommended approach for calling variants from different technologies.
+
+You use a variant caller optimized for Illumina (e.g., GATK, FreeBayes) on Illumina BAMs, producing Illumina-specific VCFs.
+
+You use a variant caller optimized for ONT (e.g., Clair3, DeepVariant) on ONT BAMs, producing ONT-specific VCFs.
+
+Only after you have VCFs (which are a standardized format for variants) do you merge them.
+
+You can then apply strategies like variant filtration (e.g., keeping only high-confidence calls present in both technologies) or ensemble calling (combining evidence from both).
+
+Cons: Requires separate variant calling branches in your pipeline.

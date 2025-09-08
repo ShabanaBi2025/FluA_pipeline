@@ -1,0 +1,48 @@
+before trim 
+Filename	ERR4552844_1.fastq
+File type	Conventional base calls
+Encoding	Sanger / Illumina 1.9
+Total Sequences	2414793
+Total Bases	339 Mbp
+Sequences flagged as poor quality	0
+Sequence length	36-151
+%GC	42
+
+
+after trim
+Filename	ERR4552844_1_paired.fq.gz
+File type	Conventional base calls
+Encoding	Sanger / Illumina 1.9
+Total Sequences	2076593
+Total Bases	270.8 Mbp
+Sequences flagged as poor quality	0
+Sequence length	50-151
+%GC	43
+
+Reduced Total Sequences: 2,414,793 down to 2,076,593. This means reads were removed, likely due to adapter contamination or being too short after quality trimming.
+
+
+Reduced Total Bases: 339 Mbp down to 270.8 Mbp. This is expected with read removal and trimming of low-quality ends.
+
+
+Increased Minimum Sequence Length: From 36 bp up to 50 bp. This confirms your 
+
+MINLEN:50 parameter in Trimmomatic successfully removed shorter reads.
+
+However, you've identified a key issue: 
+
+"I still have noisy 1-9 bp of sequence base."  This often points to issues with the "Per base sequence quality" and/or "Per base sequence content" modules in FastQC.
+
+Why this happens with Trimmomatic:
+
+Your Trimmomatic command uses 
+
+ILLUMINACLIP:adapters/TruSeq3-PE.fa:2:30:10 and SLIDINGWINDOW:4:20 MINLEN:50.
+
+ILLUMINACLIP removes adapters.
+
+SLIDINGWINDOW:4:20 clips when the average quality within a 4-base window drops below Q20. This usually cleans up the 3' (end) of the reads.
+
+MINLEN:50 discards reads shorter than 50 bp after trimming.
+
+Trimmomatic's SLIDINGWINDOW primarily focuses on the 3' end (the end of the read) where quality typically drops. It does not explicitly target low-quality bases at the 5' end (the start of the read). The first few bases can sometimes have lower quality or unusual base composition due to issues with sequencing initiation, primer dimers, or inherent biase

@@ -1,0 +1,33 @@
+# Ignore SAM/BAM and other large files
+*.sam
+*.bam
+*.fastq
+*.fq
+*.fasta
+*.fa
+*.gz
+*.zip
+*.tar
+*.tar.gz
+*.vcf
+*.bcf
+*.log
+*.rdata
+*.rhistory
+
+# Ignore Nextflow and output folders
+work/
+results/
+17082025results/
+.nextflow/
+.nextflow.log*
+
+# Ignore VS Code and system files
+.vscode/
+.DS_Store
+
+# Ignore conda and environment files
+.conda_cache/
+
+# Ignore any other folders you want to exclude
+# writing results methods errors etc/
