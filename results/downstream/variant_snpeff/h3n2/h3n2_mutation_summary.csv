@@ -1,0 +1,9 @@
+"Annotation","count"
+"synonymous_variant",3456
+"missense_variant",1212
+"downstream_gene_variant",51
+"stop_gained",25
+"upstream_gene_variant",19
+"splice_region_variant&stop_retained_variant",7
+"splice_region_variant&intron_variant",3
+"stop_lost&splice_region_variant",3

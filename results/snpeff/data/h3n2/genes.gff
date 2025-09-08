@@ -1,0 +1,68 @@
+##gff-version 3
+#!gff-spec-version 1.21
+#!processor NCBI annotwriter
+#!genome-build ASM3886238v1
+#!genome-build-accession NCBI_Assembly:GCA_038862385.1
+##sequence-region CY254736.1 1 2310
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=2043698
+CY254736.1	Genbank	region	1	2310	.	+	.	ID=CY254736.1:1..2310;Dbxref=taxon:2043698;Name=1;collection-date=04-Aug-2016;country=Australia: Brisbane;gbkey=Src;mol_type=viral cRNA;nat-host=human%3B gender Male%3B age 1 year;note=passage details: SIAT2;segment=1;serotype=H3N2;strain=A/Brisbane/158/2016
+CY254736.1	Genbank	sequence_feature	1	2310	.	+	.	ID=id-CY254736.1:1..2310;Dbxref=IRD:NIGSP_IBA_00490.PB2;gbkey=misc_feature
+CY254736.1	Genbank	gene	13	2292	.	+	.	ID=gene-PB2;Name=PB2;gbkey=Gene;gene=PB2;gene_biotype=protein_coding
+CY254736.1	Genbank	CDS	13	2292	.	+	0	ID=cds-ATV89034.1;Parent=gene-PB2;Dbxref=NCBI_GP:ATV89034.1;Name=ATV89034.1;gbkey=CDS;gene=PB2;product=polymerase PB2;protein_id=ATV89034.1
+##sequence-region CY254735.1 1 2309
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=2043698
+CY254735.1	Genbank	region	1	2309	.	+	.	ID=CY254735.1:1..2309;Dbxref=taxon:2043698;Name=2;collection-date=04-Aug-2016;country=Australia: Brisbane;gbkey=Src;mol_type=viral cRNA;nat-host=human%3B gender Male%3B age 1 year;note=passage details: SIAT2;segment=2;serotype=H3N2;strain=A/Brisbane/158/2016
+CY254735.1	Genbank	sequence_feature	1	2309	.	+	.	ID=id-CY254735.1:1..2309;Dbxref=IRD:NIGSP_IBA_00490.PB1;gbkey=misc_feature
+CY254735.1	Genbank	gene	8	2281	.	+	.	ID=gene-PB1;Name=PB1;gbkey=Gene;gene=PB1;gene_biotype=protein_coding
+CY254735.1	Genbank	CDS	8	2281	.	+	0	ID=cds-ATV89032.1;Parent=gene-PB1;Dbxref=NCBI_GP:ATV89032.1;Name=ATV89032.1;gbkey=CDS;gene=PB1;product=polymerase PB1;protein_id=ATV89032.1
+CY254735.1	Genbank	gene	102	374	.	+	.	ID=gene-PB1-F2;Name=PB1-F2;gbkey=Gene;gene=PB1-F2;gene_biotype=protein_coding
+CY254735.1	Genbank	CDS	102	374	.	+	0	ID=cds-ATV89033.1;Parent=gene-PB1-F2;Dbxref=NCBI_GP:ATV89033.1;Name=ATV89033.1;gbkey=CDS;gene=PB1-F2;product=PB1-F2 protein;protein_id=ATV89033.1
+##sequence-region CY254734.1 1 2190
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=2043698
+CY254734.1	Genbank	region	1	2190	.	+	.	ID=CY254734.1:1..2190;Dbxref=taxon:2043698;Name=3;collection-date=04-Aug-2016;country=Australia: Brisbane;gbkey=Src;mol_type=viral cRNA;nat-host=human%3B gender Male%3B age 1 year;note=passage details: SIAT2;segment=3;serotype=H3N2;strain=A/Brisbane/158/2016
+CY254734.1	Genbank	sequence_feature	1	2190	.	+	.	ID=id-CY254734.1:1..2190;Dbxref=IRD:NIGSP_IBA_00490.PA;gbkey=misc_feature
+CY254734.1	Genbank	gene	9	2159	.	+	.	ID=gene-PA;Name=PA;gbkey=Gene;gene=PA;gene_biotype=protein_coding
+CY254734.1	Genbank	CDS	9	2159	.	+	0	ID=cds-ATV89030.1;Parent=gene-PA;Dbxref=NCBI_GP:ATV89030.1;Name=ATV89030.1;gbkey=CDS;gene=PA;product=polymerase PA;protein_id=ATV89030.1
+CY254734.1	Genbank	gene	9	768	.	+	.	ID=gene-PA-X;Name=PA-X;gbkey=Gene;gene=PA-X;gene_biotype=protein_coding
+CY254734.1	Genbank	CDS	9	578	.	+	0	ID=cds-ATV89031.1;Parent=gene-PA-X;Dbxref=NCBI_GP:ATV89031.1;Name=ATV89031.1;exception=ribosomal slippage;gbkey=CDS;gene=PA-X;product=PA-X protein;protein_id=ATV89031.1
+CY254734.1	Genbank	CDS	580	768	.	+	0	ID=cds-ATV89031.1;Parent=gene-PA-X;Dbxref=NCBI_GP:ATV89031.1;Name=ATV89031.1;exception=ribosomal slippage;gbkey=CDS;gene=PA-X;product=PA-X protein;protein_id=ATV89031.1
+##sequence-region CY254729.1 1 1737
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=2043698
+CY254729.1	Genbank	region	1	1737	.	+	.	ID=CY254729.1:1..1737;Dbxref=taxon:2043698;Name=4;collection-date=04-Aug-2016;country=Australia: Brisbane;gbkey=Src;mol_type=viral cRNA;nat-host=human%3B gender Male%3B age 1 year;note=passage details: SIAT2;segment=4;serotype=H3N2;strain=A/Brisbane/158/2016
+CY254729.1	Genbank	sequence_feature	1	1737	.	+	.	ID=id-CY254729.1:1..1737;Dbxref=IRD:NIGSP_IBA_00490.HA;gbkey=misc_feature
+CY254729.1	Genbank	gene	18	1718	.	+	.	ID=gene-HA;Name=HA;gbkey=Gene;gene=HA;gene_biotype=protein_coding
+CY254729.1	Genbank	CDS	18	1718	.	+	0	ID=cds-ATV89023.1;Parent=gene-HA;Dbxref=NCBI_GP:ATV89023.1;Name=ATV89023.1;gbkey=CDS;gene=HA;product=hemagglutinin;protein_id=ATV89023.1
+CY254729.1	Genbank	signal_peptide_region_of_CDS	18	65	.	+	.	ID=id-ATV89023.1:1..16;Parent=cds-ATV89023.1;gbkey=Prot
+CY254729.1	Genbank	mature_protein_region_of_CDS	66	1052	.	+	.	ID=id-ATV89023.1:17..345;Parent=cds-ATV89023.1;gbkey=Prot;product=HA1
+CY254729.1	Genbank	mature_protein_region_of_CDS	1053	1715	.	+	.	ID=id-ATV89023.1:346..566;Parent=cds-ATV89023.1;gbkey=Prot;product=HA2
+##sequence-region CY254732.1 1 1537
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=2043698
+CY254732.1	Genbank	region	1	1537	.	+	.	ID=CY254732.1:1..1537;Dbxref=taxon:2043698;Name=5;collection-date=04-Aug-2016;country=Australia: Brisbane;gbkey=Src;mol_type=viral cRNA;nat-host=human%3B gender Male%3B age 1 year;note=passage details: SIAT2;segment=5;serotype=H3N2;strain=A/Brisbane/158/2016
+CY254732.1	Genbank	sequence_feature	1	1537	.	+	.	ID=id-CY254732.1:1..1537;Dbxref=IRD:NIGSP_IBA_00490.NP;gbkey=misc_feature
+CY254732.1	Genbank	gene	30	1526	.	+	.	ID=gene-NP;Name=NP;gbkey=Gene;gene=NP;gene_biotype=protein_coding
+CY254732.1	Genbank	CDS	30	1526	.	+	0	ID=cds-ATV89027.1;Parent=gene-NP;Dbxref=NCBI_GP:ATV89027.1;Name=ATV89027.1;gbkey=CDS;gene=NP;product=nucleocapsid protein;protein_id=ATV89027.1
+##sequence-region CY254731.1 1 1410
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=2043698
+CY254731.1	Genbank	region	1	1410	.	+	.	ID=CY254731.1:1..1410;Dbxref=taxon:2043698;Name=6;collection-date=04-Aug-2016;country=Australia: Brisbane;gbkey=Src;mol_type=viral cRNA;nat-host=human%3B gender Male%3B age 1 year;note=passage details: SIAT2;segment=6;serotype=H3N2;strain=A/Brisbane/158/2016
+CY254731.1	Genbank	sequence_feature	1	1410	.	+	.	ID=id-CY254731.1:1..1410;Dbxref=IRD:NIGSP_IBA_00490.NA;gbkey=misc_feature
+CY254731.1	Genbank	gene	1	1410	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+CY254731.1	Genbank	CDS	1	1410	.	+	0	ID=cds-ATV89026.1;Parent=gene-NA;Dbxref=NCBI_GP:ATV89026.1;Name=ATV89026.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ATV89026.1
+##sequence-region CY254730.1 1 993
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=2043698
+CY254730.1	Genbank	region	1	993	.	+	.	ID=CY254730.1:1..993;Dbxref=taxon:2043698;Name=7;collection-date=04-Aug-2016;country=Australia: Brisbane;gbkey=Src;mol_type=viral cRNA;nat-host=human%3B gender Male%3B age 1 year;note=passage details: SIAT2;segment=7;serotype=H3N2;strain=A/Brisbane/158/2016
+CY254730.1	Genbank	sequence_feature	1	993	.	+	.	ID=id-CY254730.1:1..993;Dbxref=IRD:NIGSP_IBA_00490.MP;gbkey=misc_feature
+CY254730.1	Genbank	gene	11	992	.	+	.	ID=gene-M2;Name=M2;gbkey=Gene;gene=M2;gene_biotype=protein_coding
+CY254730.1	Genbank	CDS	11	36	.	+	0	ID=cds-ATV89025.1;Parent=gene-M2;Dbxref=NCBI_GP:ATV89025.1;Name=ATV89025.1;gbkey=CDS;gene=M2;product=matrix protein 2;protein_id=ATV89025.1
+CY254730.1	Genbank	CDS	725	992	.	+	1	ID=cds-ATV89025.1;Parent=gene-M2;Dbxref=NCBI_GP:ATV89025.1;Name=ATV89025.1;gbkey=CDS;gene=M2;product=matrix protein 2;protein_id=ATV89025.1
+CY254730.1	Genbank	gene	11	769	.	+	.	ID=gene-M1;Name=M1;gbkey=Gene;gene=M1;gene_biotype=protein_coding
+CY254730.1	Genbank	CDS	11	769	.	+	0	ID=cds-ATV89024.1;Parent=gene-M1;Dbxref=NCBI_GP:ATV89024.1;Name=ATV89024.1;gbkey=CDS;gene=M1;product=matrix protein 1;protein_id=ATV89024.1
+##sequence-region CY254733.1 1 865
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=2043698
+CY254733.1	Genbank	region	1	865	.	+	.	ID=CY254733.1:1..865;Dbxref=taxon:2043698;Name=8;collection-date=04-Aug-2016;country=Australia: Brisbane;gbkey=Src;mol_type=viral cRNA;nat-host=human%3B gender Male%3B age 1 year;note=passage details: SIAT2;segment=8;serotype=H3N2;strain=A/Brisbane/158/2016
+CY254733.1	Genbank	sequence_feature	1	865	.	+	.	ID=id-CY254733.1:1..865;Dbxref=IRD:NIGSP_IBA_00490.NS;gbkey=misc_feature
+CY254733.1	Genbank	gene	15	852	.	+	.	ID=gene-NEP;Name=NEP;gbkey=Gene;gene=NEP;gene_biotype=protein_coding;gene_synonym=NS2
+CY254733.1	Genbank	CDS	15	44	.	+	0	ID=cds-ATV89029.1;Parent=gene-NEP;Dbxref=NCBI_GP:ATV89029.1;Name=ATV89029.1;Note=nonstructural protein 2;gbkey=CDS;gene=NEP;product=nuclear export protein;protein_id=ATV89029.1
+CY254733.1	Genbank	CDS	517	852	.	+	0	ID=cds-ATV89029.1;Parent=gene-NEP;Dbxref=NCBI_GP:ATV89029.1;Name=ATV89029.1;Note=nonstructural protein 2;gbkey=CDS;gene=NEP;product=nuclear export protein;protein_id=ATV89029.1
+CY254733.1	Genbank	gene	15	707	.	+	.	ID=gene-NS1;Name=NS1;gbkey=Gene;gene=NS1;gene_biotype=protein_coding
+CY254733.1	Genbank	CDS	15	707	.	+	0	ID=cds-ATV89028.1;Parent=gene-NS1;Dbxref=NCBI_GP:ATV89028.1;Name=ATV89028.1;gbkey=CDS;gene=NS1;product=nonstructural protein 1;protein_id=ATV89028.1
+###

@@ -1,0 +1,73 @@
+##gff-version 3
+##sequence-region 01790886_H252860695 1 1701
+01790886_H252860695	nextclade	region	1	1701	.	.	.	ID=01790886_H252860695;seq_index=4;Name=01790886_H252860695
+01790886_H252860695	nextclade	gene	1	51	.	+	.	gene_name=SigPep;product=SigPep;ID=Gene-4-SigPep;seq_index=4;Name=SigPep
+01790886_H252860695	nextclade	CDS	1	51	.	+	0	gene_name=SigPep;ID=CDS-4-cds-segment-from-gene-SigPep;seq_index=4;Name=SigPep;Parent=Gene-4-SigPep;product=SigPep
+01790886_H252860695	nextclade	gene	52	1032	.	+	.	seq_index=4;gene_name=HA1;product=HA1;Name=HA1;ID=Gene-4-HA1
+01790886_H252860695	nextclade	CDS	52	1032	.	+	0	product=HA1;gene_name=HA1;Name=HA1;ID=CDS-4-cds-segment-from-gene-HA1;seq_index=4;Parent=Gene-4-HA1
+01790886_H252860695	nextclade	gene	1033	1698	.	+	.	product=HA2;gene_name=HA2;ID=Gene-4-HA2;Name=HA2;seq_index=4
+01790886_H252860695	nextclade	CDS	1033	1698	.	+	0	Parent=Gene-4-HA2;seq_index=4;gene_name=HA2;ID=CDS-4-cds-segment-from-gene-HA2;Name=HA2;product=HA2
+##sequence-region AYR844_barcode06_combined 1 1701
+AYR844_barcode06_combined	nextclade	region	1	1701	.	.	.	Name=AYR844_barcode06_combined;seq_index=8;ID=AYR844_barcode06_combined
+AYR844_barcode06_combined	nextclade	gene	1	51	.	+	.	ID=Gene-8-SigPep;seq_index=8;Name=SigPep;product=SigPep;gene_name=SigPep
+AYR844_barcode06_combined	nextclade	CDS	1	51	.	+	0	product=SigPep;seq_index=8;gene_name=SigPep;ID=CDS-8-cds-segment-from-gene-SigPep;Parent=Gene-8-SigPep;Name=SigPep
+AYR844_barcode06_combined	nextclade	gene	52	1032	.	+	.	seq_index=8;product=HA1;gene_name=HA1;Name=HA1;ID=Gene-8-HA1
+AYR844_barcode06_combined	nextclade	CDS	52	1032	.	+	0	gene_name=HA1;ID=CDS-8-cds-segment-from-gene-HA1;Name=HA1;seq_index=8;Parent=Gene-8-HA1;product=HA1
+AYR844_barcode06_combined	nextclade	gene	1033	1698	.	+	.	seq_index=8;ID=Gene-8-HA2;gene_name=HA2;Name=HA2;product=HA2
+AYR844_barcode06_combined	nextclade	CDS	1033	1698	.	+	0	product=HA2;seq_index=8;gene_name=HA2;ID=CDS-8-cds-segment-from-gene-HA2;Parent=Gene-8-HA2;Name=HA2
+##sequence-region AYR844_barcode08_combined 1 1701
+AYR844_barcode08_combined	nextclade	region	1	1701	.	.	.	seq_index=2;ID=AYR844_barcode08_combined;Name=AYR844_barcode08_combined
+AYR844_barcode08_combined	nextclade	gene	1	51	.	+	.	product=SigPep;seq_index=2;gene_name=SigPep;ID=Gene-2-SigPep;Name=SigPep
+AYR844_barcode08_combined	nextclade	CDS	1	51	.	+	0	gene_name=SigPep;ID=CDS-2-cds-segment-from-gene-SigPep;Name=SigPep;Parent=Gene-2-SigPep;product=SigPep;seq_index=2
+AYR844_barcode08_combined	nextclade	gene	52	1032	.	+	.	gene_name=HA1;ID=Gene-2-HA1;seq_index=2;Name=HA1;product=HA1
+AYR844_barcode08_combined	nextclade	CDS	52	1032	.	+	0	gene_name=HA1;product=HA1;ID=CDS-2-cds-segment-from-gene-HA1;seq_index=2;Name=HA1;Parent=Gene-2-HA1
+AYR844_barcode08_combined	nextclade	gene	1033	1698	.	+	.	gene_name=HA2;product=HA2;ID=Gene-2-HA2;Name=HA2;seq_index=2
+AYR844_barcode08_combined	nextclade	CDS	1033	1698	.	+	0	Name=HA2;product=HA2;Parent=Gene-2-HA2;gene_name=HA2;ID=CDS-2-cds-segment-from-gene-HA2;seq_index=2
+##sequence-region SRR32055891 1 1701
+SRR32055891	nextclade	region	1	1701	.	.	.	Name=SRR32055891;seq_index=5;ID=SRR32055891
+SRR32055891	nextclade	gene	1	51	.	+	.	seq_index=5;ID=Gene-5-SigPep;Name=SigPep;product=SigPep;gene_name=SigPep
+SRR32055891	nextclade	CDS	1	51	.	+	0	Parent=Gene-5-SigPep;seq_index=5;product=SigPep;gene_name=SigPep;Name=SigPep;ID=CDS-5-cds-segment-from-gene-SigPep
+SRR32055891	nextclade	gene	52	1032	.	+	.	ID=Gene-5-HA1;Name=HA1;gene_name=HA1;seq_index=5;product=HA1
+SRR32055891	nextclade	CDS	52	1032	.	+	0	Name=HA1;product=HA1;gene_name=HA1;Parent=Gene-5-HA1;seq_index=5;ID=CDS-5-cds-segment-from-gene-HA1
+SRR32055891	nextclade	gene	1033	1698	.	+	.	gene_name=HA2;seq_index=5;ID=Gene-5-HA2;Name=HA2;product=HA2
+SRR32055891	nextclade	CDS	1033	1698	.	+	0	seq_index=5;Parent=Gene-5-HA2;product=HA2;gene_name=HA2;ID=CDS-5-cds-segment-from-gene-HA2;Name=HA2
+##sequence-region SRR32055877 1 1701
+SRR32055877	nextclade	region	1	1701	.	.	.	seq_index=0;ID=SRR32055877;Name=SRR32055877
+SRR32055877	nextclade	gene	1	51	.	+	.	ID=Gene-0-SigPep;Name=SigPep;product=SigPep;gene_name=SigPep;seq_index=0
+SRR32055877	nextclade	CDS	1	51	.	+	0	product=SigPep;gene_name=SigPep;ID=CDS-0-cds-segment-from-gene-SigPep;seq_index=0;Parent=Gene-0-SigPep;Name=SigPep
+SRR32055877	nextclade	gene	52	1032	.	+	.	Name=HA1;product=HA1;ID=Gene-0-HA1;gene_name=HA1;seq_index=0
+SRR32055877	nextclade	CDS	52	1032	.	+	0	Parent=Gene-0-HA1;seq_index=0;gene_name=HA1;ID=CDS-0-cds-segment-from-gene-HA1;Name=HA1;product=HA1
+SRR32055877	nextclade	gene	1033	1698	.	+	.	gene_name=HA2;product=HA2;seq_index=0;ID=Gene-0-HA2;Name=HA2
+SRR32055877	nextclade	CDS	1033	1698	.	+	0	product=HA2;Parent=Gene-0-HA2;gene_name=HA2;seq_index=0;ID=CDS-0-cds-segment-from-gene-HA2;Name=HA2
+##sequence-region AYR844_barcode09_combined 1 1701
+AYR844_barcode09_combined	nextclade	region	1	1701	.	.	.	seq_index=1;Name=AYR844_barcode09_combined;ID=AYR844_barcode09_combined
+AYR844_barcode09_combined	nextclade	gene	1	51	.	+	.	gene_name=SigPep;product=SigPep;ID=Gene-1-SigPep;seq_index=1;Name=SigPep
+AYR844_barcode09_combined	nextclade	CDS	1	51	.	+	0	Name=SigPep;product=SigPep;Parent=Gene-1-SigPep;seq_index=1;gene_name=SigPep;ID=CDS-1-cds-segment-from-gene-SigPep
+AYR844_barcode09_combined	nextclade	gene	52	1032	.	+	.	Name=HA1;gene_name=HA1;product=HA1;seq_index=1;ID=Gene-1-HA1
+AYR844_barcode09_combined	nextclade	CDS	52	1032	.	+	0	product=HA1;seq_index=1;Parent=Gene-1-HA1;Name=HA1;gene_name=HA1;ID=CDS-1-cds-segment-from-gene-HA1
+AYR844_barcode09_combined	nextclade	gene	1033	1698	.	+	.	gene_name=HA2;ID=Gene-1-HA2;seq_index=1;Name=HA2;product=HA2
+AYR844_barcode09_combined	nextclade	CDS	1033	1698	.	+	0	gene_name=HA2;ID=CDS-1-cds-segment-from-gene-HA2;seq_index=1;Parent=Gene-1-HA2;Name=HA2;product=HA2
+##sequence-region 01790879_FluAB_EFRL384EFRZ641 1 1701
+01790879_FluAB_EFRL384EFRZ641	nextclade	region	1	1701	.	.	.	Name=01790879_FluAB_EFRL384EFRZ641;ID=01790879_FluAB_EFRL384EFRZ641;seq_index=7
+01790879_FluAB_EFRL384EFRZ641	nextclade	gene	1	51	.	+	.	Name=SigPep;product=SigPep;gene_name=SigPep;ID=Gene-7-SigPep;seq_index=7
+01790879_FluAB_EFRL384EFRZ641	nextclade	CDS	1	51	.	+	0	Parent=Gene-7-SigPep;Name=SigPep;ID=CDS-7-cds-segment-from-gene-SigPep;product=SigPep;seq_index=7;gene_name=SigPep
+01790879_FluAB_EFRL384EFRZ641	nextclade	gene	52	1032	.	+	.	ID=Gene-7-HA1;gene_name=HA1;seq_index=7;Name=HA1;product=HA1
+01790879_FluAB_EFRL384EFRZ641	nextclade	CDS	52	1032	.	+	0	gene_name=HA1;seq_index=7;ID=CDS-7-cds-segment-from-gene-HA1;Parent=Gene-7-HA1;Name=HA1;product=HA1
+01790879_FluAB_EFRL384EFRZ641	nextclade	gene	1033	1698	.	+	.	seq_index=7;Name=HA2;product=HA2;gene_name=HA2;ID=Gene-7-HA2
+01790879_FluAB_EFRL384EFRZ641	nextclade	CDS	1033	1698	.	+	0	product=HA2;gene_name=HA2;seq_index=7;Name=HA2;ID=CDS-7-cds-segment-from-gene-HA2;Parent=Gene-7-HA2
+##sequence-region AYR844_barcode10_combined 1 1701
+AYR844_barcode10_combined	nextclade	region	1	1701	.	.	.	ID=AYR844_barcode10_combined;Name=AYR844_barcode10_combined;seq_index=3
+AYR844_barcode10_combined	nextclade	gene	1	51	.	+	.	ID=Gene-3-SigPep;seq_index=3;Name=SigPep;product=SigPep;gene_name=SigPep
+AYR844_barcode10_combined	nextclade	CDS	1	51	.	+	0	Name=SigPep;Parent=Gene-3-SigPep;ID=CDS-3-cds-segment-from-gene-SigPep;gene_name=SigPep;seq_index=3;product=SigPep
+AYR844_barcode10_combined	nextclade	gene	52	1032	.	+	.	seq_index=3;Name=HA1;product=HA1;gene_name=HA1;ID=Gene-3-HA1
+AYR844_barcode10_combined	nextclade	CDS	52	1032	.	+	0	gene_name=HA1;ID=CDS-3-cds-segment-from-gene-HA1;product=HA1;Parent=Gene-3-HA1;seq_index=3;Name=HA1
+AYR844_barcode10_combined	nextclade	gene	1033	1698	.	+	.	ID=Gene-3-HA2;seq_index=3;Name=HA2;gene_name=HA2;product=HA2
+AYR844_barcode10_combined	nextclade	CDS	1033	1698	.	+	0	ID=CDS-3-cds-segment-from-gene-HA2;Name=HA2;product=HA2;seq_index=3;gene_name=HA2;Parent=Gene-3-HA2
+##sequence-region AYR844_barcode05_combined 1 1701
+AYR844_barcode05_combined	nextclade	region	1	1701	.	.	.	seq_index=6;ID=AYR844_barcode05_combined;Name=AYR844_barcode05_combined
+AYR844_barcode05_combined	nextclade	gene	1	51	.	+	.	gene_name=SigPep;Name=SigPep;ID=Gene-6-SigPep;product=SigPep;seq_index=6
+AYR844_barcode05_combined	nextclade	CDS	1	51	.	+	0	seq_index=6;gene_name=SigPep;ID=CDS-6-cds-segment-from-gene-SigPep;Parent=Gene-6-SigPep;Name=SigPep;product=SigPep
+AYR844_barcode05_combined	nextclade	gene	52	1032	.	+	.	Name=HA1;seq_index=6;product=HA1;ID=Gene-6-HA1;gene_name=HA1
+AYR844_barcode05_combined	nextclade	CDS	52	1032	.	+	0	gene_name=HA1;product=HA1;ID=CDS-6-cds-segment-from-gene-HA1;Name=HA1;seq_index=6;Parent=Gene-6-HA1
+AYR844_barcode05_combined	nextclade	gene	1033	1698	.	+	.	ID=Gene-6-HA2;product=HA2;gene_name=HA2;seq_index=6;Name=HA2
+AYR844_barcode05_combined	nextclade	CDS	1033	1698	.	+	0	seq_index=6;Name=HA2;ID=CDS-6-cds-segment-from-gene-HA2;gene_name=HA2;Parent=Gene-6-HA2;product=HA2

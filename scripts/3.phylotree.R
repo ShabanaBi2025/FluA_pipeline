@@ -4,7 +4,11 @@ library(dplyr)
 library(readr)
 library(ggplot2)
 
+<<<<<<< HEAD
 # List of strains to process
+=======
+
+>>>>>>> f502c5274a6e63da3e929c45feff7de4588a5fde
 strains <- c("h1n1", "h3n2")
 
 for (strain in strains) {
@@ -21,7 +25,11 @@ for (strain in strains) {
     next
   }
 
+<<<<<<< HEAD
   #  tree 
+=======
+  # Fix tree if missing semicolon
+>>>>>>> f502c5274a6e63da3e929c45feff7de4588a5fde
   tree_text <- readLines(tree_file)
   if (!grepl(";$", tree_text[length(tree_text)])) {
     cat("Appending semicolon to tree file for", strain, "\n")
@@ -37,6 +45,7 @@ for (strain in strains) {
     metadata <- metadata %>% rename(sample_id = seqName)
   }
 
+<<<<<<< HEAD
   # Create a numeric label for each tip for clean plotting
   label_map <- tibble(
     sample_id = tree$tip.label,
@@ -52,12 +61,16 @@ for (strain in strains) {
   metadata <- metadata %>% left_join(label_map, by = "sample_id")
 
   # Join tree tips with metadata including label_num
+=======
+  # Join tree tip labels with metadata
+>>>>>>> f502c5274a6e63da3e929c45feff7de4588a5fde
   tree_data <- full_join(
     tibble(sample_id = tree$tip.label),
     metadata,
     by = "sample_id"
   )
 
+<<<<<<< HEAD
   # Plot tree with numeric labels and clade colors
  p <- ggtree(tree, size = 0.5, color = "grey80") %<+% tree_data +
   geom_tiplab(
@@ -91,4 +104,26 @@ scale_color_manual(
   ggsave(file.path(output_dir, paste0(strain, "_tree_plot.png")), plot = p, width = 10, height = 8, dpi = 300)
 
   message("Saved tree plot and label legend for: ", strain, "\n")
+=======
+  # Plot tree colored by clade
+  p <- ggtree(tree, size = 0.25, color = "grey30") %<+% tree_data +
+    geom_tiplab(aes(color = as.factor(clade)), size = 3) +
+    scale_color_brewer(palette = "Set3") +
+    theme_tree2() +
+    labs(title = paste0("Phylogenetic Tree - ", toupper(strain))) +
+    theme(
+      legend.position = "right",
+      plot.title = element_text(face = "bold", hjust = 0.5, size = 14),
+      legend.title = element_text(face = "bold"),
+      legend.text = element_text(size = 10)
+    )
+
+  # Output directory and save plot
+  output_dir <- file.path("results", "downstream", "phylogenetic", strain)
+  dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
+
+  ggsave(file.path(output_dir, paste0(strain, "_tree_plot.png")), plot = p, width = 10, height = 8)
+
+  message("Saved tree plot for: ", strain, "\n")
+>>>>>>> f502c5274a6e63da3e929c45feff7de4588a5fde
 }

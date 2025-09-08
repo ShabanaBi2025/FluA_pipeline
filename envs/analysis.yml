@@ -1,5 +1,6 @@
 name: analysis_env
 channels:
+<<<<<<< HEAD
   - conda-forge
   - bioconda
   - defaults
@@ -17,10 +18,27 @@ dependencies:
   - r-markdown
   - r-knitr
   - r-reshape2
+=======
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - r-base=4.3
+  - r-tidyverse
+  - r-ggplot2
+  - r-readr
+  - r-dplyr
+  - r-janitor    
+  - r-markdown
+  - r-knitr
+  - r-reshape2
+  - r-vcfr
+>>>>>>> f502c5274a6e63da3e929c45feff7de4588a5fde
   - r-data.table
   - r-pheatmap
   - r-ggthemes
   - r-ape
+<<<<<<< HEAD
   - r-vroom
   - r-curl
   - r-glue
@@ -36,3 +54,8 @@ dependencies:
   - pandoc
   - bioconductor-ggtree
   - bioconductor-treeio
+=======
+  - bioconductor-ggtree 
+   - python=3.11
+
+>>>>>>> f502c5274a6e63da3e929c45feff7de4588a5fde
