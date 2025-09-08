@@ -1,7 +1,0 @@
-variant calling I need .fai of reference so I had to run that make this part of the bwa files created from the the reference.fasta files   command I ran  
-
-
-(base) shabana@UKNEQAS-SBI:~/error_flu-pipeline$ samtools faidx results/indexed_reference/h1n1/h1n1_reference.fasta
-samtools faidx results/indexed_reference/h3n2/h3n2_reference.fasta
-(base) shabana@UKNEQAS-SBI:~/error_flu-pipeline$
-
