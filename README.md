@@ -58,8 +58,7 @@ mamba env create -f envs/environment.yml
 3. Set Up the Directory Structure
 The pipeline expects a specific directory structure for input files.
 
-
-.
+</br>
 ├── data/
 │   ├── h1n1/
 │   │   ├── sample1_R1.fastq.gz
