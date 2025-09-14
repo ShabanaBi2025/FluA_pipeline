@@ -70,10 +70,16 @@ The pipeline expects a specific directory structure for input files.
 │   │   └── h1n1_reference.fasta</br>
 │   └── h3n2/</br>
 │       └── h3n2_reference.fasta</br>
+├── nextclade_datasets/</br>
+│   ├── h1n1/</br>
+│   │   └── sequence.fasta</br>
+│   └── h3n2/</br>
+│       └── sequence.fasta</br>
 ├── adapters/</br>
 │   └── TruSeq3-PE.fa           # Adapter file for Trimmomatic</br>
 ├── envs/</br>
 │   ├── environment.yml</br>
+│   ├── analysis.yml</br>
 ├── modules/</br>
 │   ├── qc.nf</br>
 │   ├── trimmomatic.nf         </br>
@@ -81,10 +87,23 @@ The pipeline expects a specific directory structure for input files.
 │   ├── align_illumina.nf</br>
 │   ├── align_ont.nf</br>
 │   ├── mutltiqc.nf        </br> 
-│   ├── bcftools.nf   </br>          
+│   ├── bcftools.nf   </br>     
+│   ├── snpeff.nf </br>
 │   └── nextclade.nf</br>
+├── results/</br>
+│   ├── cleaned_reference</br>
+│   ├── h1n1/</br>
+│   │   └── h1n1_reference files/br>
+│   └── h3n2/</br>
+│       └── h3n2_reference files</br>
+│   ├── snpeff
+│     ├── data/</br>
+│       ├── h1n1/</br>
+│       └── h3n2</br>
+│       └── snpeff.config</br>
 ├── main.nf</br>
 └── nextflow.config             # Main config includes </br>
+└── main_clean_refs.nf
 
 5. Prepare Reference Genomes (One-time step)
 Before running the main pipeline, you must clean and index your reference genomes. This is a one-time setup step.
