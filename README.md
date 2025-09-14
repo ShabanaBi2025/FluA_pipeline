@@ -119,17 +119,14 @@ This will create a results/cleaned_reference directory containing the prepared g
 5. Download Nextclade Datasets (One-time step)
 You also need to download the Nextclade datasets for H1N1 and H3N2.
 
+# Download H1N1 dataset
+nextclade dataset get --name 'flu_h1n1pdm_ha' --output-dir 'nextclade_datasets/h1n1'
 # Download H3N2 dataset
 nextclade dataset get --name 'flu_h3n2_ha' --output-dir 'nextclade_datasets/h3n2'
 
-# Download H1N1 dataset
-nextclade dataset get --name 'flu_h1n1pdm_ha' --output-dir 'nextclade_datasets/h1n1'
-
 Configuration
 All pipeline parameters are defined in the nextflow.config file. The most important parameters are set by default but can be modified if needed:
-
 params.raw_reads: The path pattern to find the input FASTQ files (default: data/**/*.fastq*).
-
 params.outdir: The directory where all results will be saved (default: results).
 
 Usage
@@ -148,6 +145,30 @@ The final, aggregated reports can be found in:
 results/multiqc_report/
 
 This directory will contain a separate folder for each strain (e.g., h1n1/, h3n2/), and inside each, you will find a multiqc_report.html file. This HTML file can be opened in any web browser and provides a comprehensive, interactive summary of all the results for that specific strain.
+
+Once the main pipeline (main.nf) completes successfully, additional visualisation and reporting steps can be performed using custom R scripts. These scripts generate mutation heatmaps, phylogenetic trees, and clade-specific summaries for in-depth analysis.
+
+1. Activate the R Analysis Environment
+Ensure you're in the root directory of the project, then activate the analysis-specific Conda environment:
+
+conda env create -f envs/analysis.yml
+conda activate fluA_analysis
+
+2. Run the R Scripts
+You can now run the downstream analysis scripts located in the scripts/ folder:
+Rscript scripts/variants_bwa.R
+Rscript scripts/variants_snpeff.R
+Rscript scripts/Phylotree.R
+
+These scripts will:
+Generate SNP and variant summaries from BWA/BCFtools output
+Annotate functional mutations using SnpEff data
+Visualize the phylogenetic relationships between samples
+
+3. Output
+The resulting plots and summary tables will be saved under:
+results/downstream/
+
 
 EQA Relevance
 This pipeline was developed as part of an applied bioinformatics project during a professional apprenticeship, bringing MSC-level genomic analysis capabilities into the UK NEQAS EQA programme.
