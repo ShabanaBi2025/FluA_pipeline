@@ -59,12 +59,12 @@ mamba env create -f envs/environment.yml
 The pipeline expects a specific directory structure for input files.
 
 </br>
-├── data/
-│   ├── h1n1/
-│   │   ├── sample1_R1.fastq.gz
-│   │   └── sample1_R2.fastq.gz
-│   └── h3n2/
-│       └── sample2.fastq.gz
+├── data/</br>
+│   ├── h1n1/</br>
+│   │   ├── sample1_R1.fastq.gz</br>
+│   │   └── sample1_R2.fastq.gz</br>
+│   └── h3n2/</br>
+│       └── sample2.fastq.gz</br>
 ├── references/
 │   ├── h1n1/
 │   │   └── h1n1_reference.fasta
