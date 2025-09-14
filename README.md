@@ -90,6 +90,10 @@ The pipeline expects a specific directory structure for input files.
 │   ├── bcftools.nf   </br>     
 │   ├── snpeff.nf </br>
 │   └── nextclade.nf</br>
+├── scripts/</br>
+│   ├── variants_bwa.R</br>
+│   ├── variants_snpeff.R        </br>
+│   ├── Phylotree.R            </br> 
 ├── results/</br>
 │   ├── cleaned_reference</br>
 │   ├── h1n1/</br>
