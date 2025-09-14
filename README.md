@@ -57,6 +57,8 @@ mamba env create -f envs/environment.yml
 
 3. Set Up the Directory Structure
 The pipeline expects a specific directory structure for input files.
+
+
 .
 ├── data/
 │   ├── h1n1/
